@@ -1,0 +1,187 @@
+/* CSS untuk membuat kotak hasil validasi berada di sebelah kanan form */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.placeholder {
+    width: 100%;
+    height: 578px;
+    background-color: #ddd;
+    margin-top: 20px;
+}
+
+.banner {
+    background-color: lightgray;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row; /* Mengatur agar form dan hasil validasi sejajar */
+    justify-content: space-between; /* Mengatur agar form dan hasil validasi berada di dua ujung */
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#messageForm {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+#messageForm .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#messageForm label {
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 150px; /* Menyesuaikan lebar label */
+}
+
+#messageForm input,
+#messageForm textarea {
+    width: calc(100% - 170px); /* Menyesuaikan lebar input dengan mengurangi lebar label dan padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#messageForm input[type="radio"] {
+    margin-right: 5px;
+}
+
+#messageForm div {
+    display: flex;
+    align-items: center;
+}
+
+#messageForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#messageForm button:hover {
+    background-color: #45a049;
+}
+
+#formResult {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+/* CSS untuk Our Facilitation */
+#facilitation {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.circle-frame {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #000;
+}
+
+/* CSS untuk menambahkan garis horizontal */
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #000;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    #messageForm, #formResult {
+        width: calc(50% - 20px); /* Mengatur lebar form dan hasil validasi pada layar kecil */
+        margin-top: 20px; /* Menambahkan jarak atas pada layar kecil */
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .placeholder {
+        height: 200px;
+    }
+
+    .banner {
+        height: 100px;
+    }
+}
