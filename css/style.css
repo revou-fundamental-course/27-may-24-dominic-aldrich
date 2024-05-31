@@ -1,4 +1,4 @@
-/* CSS untuk membuat kotak hasil validasi berada di sebelah kanan form */
+
 
 body {
     margin: 0;
@@ -72,8 +72,8 @@ nav ul li a {
 
 .form-container {
     display: flex;
-    flex-direction: row; /* Mengatur agar form dan hasil validasi sejajar */
-    justify-content: space-between; /* Mengatur agar form dan hasil validasi berada di dua ujung */
+    flex-direction: row; 
+    justify-content: space-between; 
     align-items: flex-start;
     margin-top: 20px;
 }
@@ -92,12 +92,12 @@ nav ul li a {
 #messageForm label {
     margin-bottom: 5px;
     display: inline-block;
-    width: 150px; /* Menyesuaikan lebar label */
+    width: 150px; 
 }
 
 #messageForm input,
 #messageForm textarea {
-    width: calc(100% - 170px); /* Menyesuaikan lebar input dengan mengurangi lebar label dan padding */
+    width: calc(100% - 170px); 
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -133,7 +133,7 @@ nav ul li a {
     border-radius: 5px;
 }
 
-/* CSS untuk Our Facilitation */
+
 #facilitation {
     margin-top: 20px;
     font-weight: bold;
@@ -152,7 +152,7 @@ nav ul li a {
     border: 3px solid #000;
 }
 
-/* CSS untuk menambahkan garis horizontal */
+
 hr {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -166,8 +166,8 @@ hr {
         align-items: center;
     }
     #messageForm, #formResult {
-        width: calc(50% - 20px); /* Mengatur lebar form dan hasil validasi pada layar kecil */
-        margin-top: 20px; /* Menambahkan jarak atas pada layar kecil */
+        width: calc(50% - 20px); 
+        margin-top: 20px;
     }
 }
 
