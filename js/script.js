@@ -7,8 +7,32 @@ function showSection(sectionId) {
             section.classList.add('hidden');
         }
     });
+
+    // Tampilkan pesan di bagian home jika kembali ke home
     if (sectionId === 'home') {
         document.getElementById('message').classList.remove('hidden');
+    } else {
+        document.getElementById('message').classList.add('hidden');
+    }
+
+    // Sembunyikan tombol "My Hobby" dan "Contact Us" jika bukan di bagian home
+    const hobbyBtn = document.querySelector('a[href="#hobby"]');
+    const contactBtn = document.querySelector('a[href="#message"]');
+
+    if (sectionId !== 'home') {
+        hobbyBtn.classList.add('hidden'); // Sembunyikan tombol "My Hobby"
+        contactBtn.classList.add('hidden'); // Sembunyikan tombol "Contact Us"
+    } else {
+        hobbyBtn.classList.remove('hidden'); // Tampilkan tombol "My Hobby" jika di home
+        contactBtn.classList.remove('hidden'); // Tampilkan tombol "Contact Us" jika di home
+    }
+
+    // Jika section bukan di home, kembalikan ke home dan scroll ke sectionId yang diinginkan
+    if (sectionId !== 'home') {
+        scrollToSection('home');
+        setTimeout(() => {
+            scrollToSection(sectionId);
+        }, 500);
     }
 }
 
@@ -18,7 +42,7 @@ function scrollToSection(sectionId) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const userName = prompt('Please enter your name:', 'Tulis Namamu');
+    const userName = prompt('Siapa Namamu?', 'Tulis Nama');
     if (userName) {
         document.getElementById('userName').textContent = userName;
     }
