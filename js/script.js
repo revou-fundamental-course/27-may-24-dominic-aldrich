@@ -1,4 +1,3 @@
-/* Script.JS */ 
 function showSection(sectionId) {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
@@ -8,10 +7,18 @@ function showSection(sectionId) {
             section.classList.add('hidden');
         }
     });
+    if (sectionId === 'home') {
+        document.getElementById('message').classList.remove('hidden');
+    }
+}
+
+function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.scrollIntoView({ behavior: 'smooth' });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const userName = prompt('Please enter your name:', 'Tulis Namamu Disini');
+    const userName = prompt('Please enter your name:', 'Tulis Namamu');
     if (userName) {
         document.getElementById('userName').textContent = userName;
     }
@@ -33,10 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('formResult').classList.remove('hidden');
     });
 
-    const scrollToMessageLink = document.getElementById('scrollToMessage');
-    scrollToMessageLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        const messageSection = document.getElementById('messageInput');
-        messageSection.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    });
+    // Banner Slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slides img');
+    const totalSlides = slides.length;
+
+    function showSlides() {
+        slides.forEach((slide, index) => {
+            slide.style.display = index === slideIndex ? 'block' : 'none';
+        });
+        slideIndex = (slideIndex + 1) % totalSlides;
+        setTimeout(showSlides, 3000);
+    }
+
+    showSlides();
 });

@@ -1,4 +1,4 @@
-
+/* CSS untuk membuat kotak hasil validasi berada di sebelah kanan form */
 
 body {
     margin: 0;
@@ -21,7 +21,7 @@ header {
 }
 
 .logo img {
-    width: 50px;
+    width: 250px;
     height: 50px;
 }
 
@@ -61,19 +61,28 @@ nav ul li a {
     margin-top: 20px;
 }
 
-.banner {
-    background-color: lightgray;
-    height: 200px;
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slides {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+    transition: transform 1s ease-in-out;
+}
+
+.slides img {
+    min-width: 100%;
+    height: 578px;
+    object-fit: cover;
 }
 
 .form-container {
     display: flex;
-    flex-direction: row; 
-    justify-content: space-between; 
+    flex-direction: row;
+    justify-content: space-between;
     align-items: flex-start;
     margin-top: 20px;
 }
@@ -92,12 +101,12 @@ nav ul li a {
 #messageForm label {
     margin-bottom: 5px;
     display: inline-block;
-    width: 150px; 
+    width: 150px;
 }
 
 #messageForm input,
 #messageForm textarea {
-    width: calc(100% - 170px); 
+    width: calc(100% - 170px);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -133,40 +142,13 @@ nav ul li a {
     border-radius: 5px;
 }
 
-
-#facilitation {
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-.image-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-.circle-frame {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 3px solid #000;
-}
-
-
-hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #000;
-}
-
 @media (max-width: 768px) {
     .form-container {
         flex-direction: column;
         align-items: center;
     }
     #messageForm, #formResult {
-        width: calc(50% - 20px); 
+        width: calc(50% - 20px);
         margin-top: 20px;
     }
 }
@@ -181,7 +163,28 @@ hr {
         height: 200px;
     }
 
-    .banner {
-        height: 100px;
+    .slider {
+        height: 200px;
     }
+
+    .slides img {
+        height: 200px;
+    }
+}
+
+/* CSS untuk frame lingkaran di Our Facilities */
+
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.image-container img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
 }
