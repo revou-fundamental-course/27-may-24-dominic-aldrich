@@ -20,14 +20,14 @@ function showSection(sectionId) {
     const contactBtn = document.querySelector('a[href="#message"]');
 
     if (sectionId !== 'home') {
-        hobbyBtn.classList.add('hidden'); // Sembunyikan tombol "My Hobby"
+        hobbyBtn.classList.add('hidden'); 
         contactBtn.classList.add('hidden');
     } else {
         hobbyBtn.classList.remove('hidden'); 
         contactBtn.classList.remove('hidden'); 
     }
 
-    // Jika section bukan di home, kembalikan ke home dan scroll ke sectionId yang diinginkan
+
     if (sectionId !== 'home') {
         scrollToSection('home');
         setTimeout(() => {
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('formResult').classList.remove('hidden');
     });
 
-    // Banner Slider
+
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slides img');
     const totalSlides = slides.length;
