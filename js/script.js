@@ -8,26 +8,26 @@ function showSection(sectionId) {
         }
     });
 
-    // Tampilkan pesan di bagian home jika kembali ke home
+   
     if (sectionId === 'home') {
         document.getElementById('message').classList.remove('hidden');
     } else {
         document.getElementById('message').classList.add('hidden');
     }
 
-    // Sembunyikan tombol "My Hobby" dan "Contact Us" jika bukan di bagian home
+
     const hobbyBtn = document.querySelector('a[href="#hobby"]');
     const contactBtn = document.querySelector('a[href="#message"]');
 
     if (sectionId !== 'home') {
-        hobbyBtn.classList.add('hidden'); // Sembunyikan tombol "My Hobby"
-        contactBtn.classList.add('hidden'); // Sembunyikan tombol "Contact Us"
+        hobbyBtn.classList.add('hidden'); 
+        contactBtn.classList.add('hidden');
     } else {
-        hobbyBtn.classList.remove('hidden'); // Tampilkan tombol "My Hobby" jika di home
-        contactBtn.classList.remove('hidden'); // Tampilkan tombol "Contact Us" jika di home
+        hobbyBtn.classList.remove('hidden'); 
+        contactBtn.classList.remove('hidden'); 
     }
 
-    // Jika section bukan di home, kembalikan ke home dan scroll ke sectionId yang diinginkan
+ 
     if (sectionId !== 'home') {
         scrollToSection('home');
         setTimeout(() => {
